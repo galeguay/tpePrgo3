@@ -77,14 +77,14 @@ public class TreeWithNode{
     }
 
 	private TreeNode getGenre(TreeNode actual, String genre) {
-		if(actual.getGenre().compareTo(genre) == -1) {
+		if(actual.getGenre().compareTo(genre) < 0) {
 			if(actual.getRight() == null) {
 				return null;
 			}else {
 				return getGenre(actual.getRight(), genre);
 			}
 		}
-		if(actual.getGenre().compareTo(genre) == 1) {
+		if(actual.getGenre().compareTo(genre) > 0) {
 			if(actual.getLeft() == null) {
 				return null;
 			}else {

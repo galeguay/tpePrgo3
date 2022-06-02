@@ -6,7 +6,6 @@ public class TreeNode {
     private TreeNode right;
     private LinkedList<Integer> bookIndexes;
 
-
     public TreeNode(String genres) {
         this.genres = genres;
         this.left = null;
@@ -20,7 +19,6 @@ public class TreeNode {
         this.right = right;
         this.bookIndexes = new LinkedList<>();
     }
-
 
     public String getGenre() {
         return genres;
@@ -54,7 +52,7 @@ public class TreeNode {
         this.bookIndexes = bookIndexes;
     }
 
-    public boolean hasBook(Book b) {
+    public boolean hasIndexBook(int b) {
         return bookIndexes.contains(b);
     }
 

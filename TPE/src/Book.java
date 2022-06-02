@@ -18,4 +18,8 @@ public class Book {
 		return this.title + this.author + this.pages + this.genres;
 	}
 
+	public String getTitulo(){
+		return this.title;
+	}
+
 }
