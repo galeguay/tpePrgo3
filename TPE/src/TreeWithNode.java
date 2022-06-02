@@ -16,7 +16,7 @@ public class TreeWithNode{
 		else
 			this.add(this.root, genre);
 	}
-
+/* 
 	private void add(TreeNode actual, String genre) {
 		if(actual != null){
 			if(actual.getGenre().compareTo(genre) == -1)
@@ -28,16 +28,16 @@ public class TreeWithNode{
 			actual = temp;
 		}
 	}
-/* 
+*/
 	private void add(TreeNode actual, String genre) {
-		if(actual.getGenre().compareTo(genre) == 1){
+		if(actual.getGenre().compareTo(genre) > 0){
 			if (actual.getLeft() == null) { 
 				TreeNode temp = new TreeNode(genre);
 				actual.setLeft(temp);
 			} else {
 				add(actual.getLeft(),genre);
 			}
-		} else if(actual.getGenre().compareTo(genre) == -1){
+		} else if(actual.getGenre().compareTo(genre) < 0){
 			if (actual.getRight() == null) { 
 				TreeNode temp = new TreeNode(genre);
 				actual.setRight(temp);
@@ -46,22 +46,22 @@ public class TreeWithNode{
 			}
 		}
 	}
-*/
+
 
 	public boolean hasGenre(String genre) {
-		return hasGenre(root, genre);
+		return hasGenre(this.root, genre);
 	}
 
 	private boolean hasGenre(TreeNode actual, String genre) {
 		if(actual != null){
-			if(actual.getGenre().compareTo(genre) == -1) {
+			if(actual.getGenre().compareTo(genre) < 0) {
 				if(actual.getRight() == null) {
 					return false;
 				}else {
 					return hasGenre(actual.getRight(), genre);
 				}
 			}
-			if(actual.getGenre().compareTo(genre) == 1) {
+			if(actual.getGenre().compareTo(genre) > 0) {
 				if(actual.getLeft() == null) {
 					return false;
 				}else {

@@ -21,25 +21,26 @@ public class Library {
 
         //SE AGREGA EL LIBRO A LA LISTA DE CADA GENERO AL QUE PERTENECE
         for (int i = 0; i < genresOfBook.length; i++) {
-            System.out.println("");
-            System.out.println("esta el genero? --"+genresTree.hasGenre(genresOfBook[i]));
-            System.out.println("");
 
-            genresTree.printInOrder();
-            
             if (!genresTree.hasGenre(genresOfBook[i])){
                 genresTree.add(genresOfBook[i]);
             }
+
             
-            genresTree.printInOrder();
 
             TreeNode nodoGenero = genresTree.getGenre(genresOfBook[i]);
-            System.out.println(nodoGenero);
+            //System.out.println(nodoGenero);
 
             if(!nodoGenero.hasBook(b)){
                 nodoGenero.addBook(books.indexOf(b)); // VER COSTO
             }
         }
+        System.out.println("PRE ORDER");
+        genresTree.printPreOrder();
+
+        System.out.println("");
+        System.out.println("IN ORDER");
+        genresTree.printInOrder();
     }
 
     public ArrayList<Book> obtenerLibrosFiltrados(String genero) {
