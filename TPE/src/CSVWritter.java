@@ -2,13 +2,14 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CSVWritter {
 
-	public static void main(String[] args) {
+	public void writeNewFile(ArrayList<Book> books) {
 		BufferedWriter bw = null;
 		try {
-			File file = new File("[PATH-AL-ARCHIVO]/salida.csv");
+			File file = new File("salida.csv");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -16,21 +17,11 @@ public class CSVWritter {
 			FileWriter fw = new FileWriter(file);
 			bw = new BufferedWriter(fw);
 
-			// Escribo la primer linea del archivo
-			String contenidoLinea1 = "Usuario1,Tiempo1";
-			bw.write(contenidoLinea1);
-			bw.newLine();
-
-			// Escribo la segunda linea del archivo
-			String contenidoLinea2 = "Usuario2,Tiempo2";
-			bw.write(contenidoLinea2);
-			bw.newLine();
-			
-			/*
-			 *
-			 * ... 
-			 * 
-			*/
+			for (Book book : books) {
+				String contenidoLinea1 = book.getTitulo();
+				bw.write(contenidoLinea1);
+				bw.newLine();
+			}
 
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

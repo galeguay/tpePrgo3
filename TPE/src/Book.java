@@ -4,7 +4,7 @@ public class Book {
 	private String author;
 	private int pages;
 	private String[] genres;
-	
+
 	public Book(String titulo, String autor, int paginas, String[] generos) {
 		super();
 		this.title = titulo;
@@ -18,7 +18,7 @@ public class Book {
 		return this.title + this.author + this.pages + this.genres;
 	}
 
-	public String getTitulo(){
+	public String getTitulo() {
 		return this.title;
 	}
 
