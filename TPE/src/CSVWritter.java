@@ -22,9 +22,7 @@ public class CSVWritter {
 				bw.write(contenidoLinea1);
 				bw.newLine();
 			}
-			long endTime = System.nanoTime();
-			System.out.println("Tiempo Final: "+endTime);
-
+			
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} finally {
