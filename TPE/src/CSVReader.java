@@ -6,13 +6,15 @@ import java.util.ArrayList;
 public class CSVReader {
 
     public static void main(String[] args) {
-        String csvFile = "dataset2.csv";
+        String csvFile = "dataset1.csv";
         String line = "";
         String cvsSplitBy = ",";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             Library b = new Library();
             br.readLine();
+            long startTime = System.nanoTime();
+            System.out.println("Tiempo inicial: "+startTime);
             while ((line = br.readLine()) != null) {
                 String[] items = line.split(cvsSplitBy);
                 b.addBook(items);
